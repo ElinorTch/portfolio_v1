@@ -22,7 +22,7 @@
     "@angular/router": "^18.2.13",
     "@angular/ssr": "^18.2.14",
     "@ng-icons/core": "^30.3.0",
-    "@ng-icons/ux-aspects": "^30.3.0",
+    "@ng-icons/huge-icons": "^30.3.0",
     "@tailwindcss/postcss": "^4.0.9",
     "express": "^4.18.2",
     "postcss": "^8.5.3",
