@@ -1,1 +1,21 @@
-<p>navbar works!</p>
+<nav
+  class="animate-slide-down px-15 py-5 flex flex-row items-center justify-between text-white"
+>
+  <div class="text-[25px] font-bold cursor-pointer">
+    <img src="assets/logo.png" class="" alt="" srcset="" />
+  </div>
+  <div class="flex flex-row items-center">
+    <li class="flex flex-row items-center gap-10">
+      @for (item of links; track $index) {
+      <ol
+        class="text-[17px] relative pb-1 flex gap-2 cursor-pointer hover:text-[#7fffd4] after:absolute after:left-0 after:bottom-0 after:rounded-[25px] after:h-[4px] after:w-0 after:bg-[#7fffd4] after:transition-all after:duration-300 hover:after:w-2/3"
+      >
+        <span class="text-[#7fffd4]">0{{ $index + 1 }}.</span>
+        {{
+          item.name
+        }}
+      </ol>
+      }
+    </li>
+  </div>
+</nav>
