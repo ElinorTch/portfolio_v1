@@ -1,5 +1,5 @@
 <div
-  class="animate-slide-up fixed bottom-0 left-15 flex flex-col items-center gap-4 text-[#8892b0]"
+  class="animate-slide-up w-full pb-4 md:pb-0 md:w-0 md:fixed bottom-0 left-15 flex justify-center flex-row md:flex-col items-center gap-4 text-[#8892b0]"
 >
   @for (link of links; track $index) {
   <a
@@ -10,10 +10,10 @@
     ><ng-icon [name]="link.icon" size="21px"></ng-icon
   ></a>
   }
-  <div class="h-32 w-[2px] bg-[#8892b0]"></div>
+  <div class="md:h-32 md:w-[2px] bg-[#8892b0]"></div>
 </div>
 <div
-  class="animate-slide-up fixed bottom-0 right-15 w-3 flex flex-col items-center gap-[120px] text-[#8892b0]"
+  class="animate-slide-up hidden fixed md:flex bottom-0 right-15 w-3 flex-col items-center gap-[120px] text-[#8892b0]"
 >
   <div
     class="rotate-90 hover:-translate-y-2 transition-all duration-300 hover:text-[#7fffd4]"

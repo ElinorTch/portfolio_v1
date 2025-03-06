@@ -9,7 +9,7 @@
       srcset=""
     />
   </div>
-  <div class="flex flex-row items-center">
+  <div class="hidden lg:flex flex-row items-center">
     <li class="flex flex-row items-center gap-10 text-[#8892b0]">
       @for (item of links; track $index) {
       <ol
@@ -21,5 +21,8 @@
       </ol>
       }
     </li>
+  </div>
+  <div class="lg:hidden">
+    <ng-icon name="hugeMenu01" size="32" color="#7fffd4"></ng-icon>
   </div>
 </nav>
