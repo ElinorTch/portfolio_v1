@@ -15,9 +15,9 @@
       <ol
         class="text-[17px] relative pb-1 flex gap-2 cursor-pointer hover:text-[#7fffd4] after:absolute after:left-0 after:bottom-0 after:rounded-[25px] after:h-[4px] after:w-0 after:bg-[#7fffd4] after:transition-all after:duration-300 hover:after:w-2/3"
       >
-        {{
-          item.name
-        }}
+        <a [href]="'#' + item.target">
+          {{ item.name }}
+        </a>
       </ol>
       }
     </li>

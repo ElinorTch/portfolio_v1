@@ -19,7 +19,7 @@ export class NavbarComponent {
     },
     {
       name: 'Expériences',
-      target: '',
+      target: 'experiences',
     },
     {
       name: 'Compétences',

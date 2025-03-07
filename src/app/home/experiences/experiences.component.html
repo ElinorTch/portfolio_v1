@@ -1,1 +1,32 @@
-<p>experiences works!</p>
+<div class="md:px-[20%] flex flex-col gap-6">
+  <h1
+    class="flex items-center gap-2 text-[28px] md:text-[2vw] font-semibold text-[#ccd6f6]"
+  >
+    Expériences <span class="text-[#7fffd4]">Professionnelles</span>
+    <div class="hidden md:flex h-[0.5px] w-[250px] bg-[#8892b0]"></div>
+  </h1>
+  <div class="flex flex-row gap-10">
+    <div class="relative flex flex-col flex-start text-[#8892b0]">
+      @for (experience of experiences; track $index) { @if ($index == 0) {
+      <div
+        class="absolute h-14 w-[2px] bg-[#7fffd4] rounded-[10px] transition-all duration-300"
+        [ngStyle]="{ transform: 'translateY(' + indexExp * 100 + '%)' }"
+      ></div>
+      }
+      <button
+        class="py-3 px-6 h-14 cursor-pointer border-l-[1px] border-[#8892b0] w-[250px] transition-all duration-300 hover:text-[#7fffd4] hover:bg-[#112240]"
+        [ngClass]="{
+          'text-[#7fffd4] bg-[#112240]': experience.enterprise == activeExp,
+          'hover:border-[#8892b0]': experience.enterprise != activeExp
+        }"
+        (click)="setActive(experience.enterprise, $index)"
+      >
+        {{ experience.enterprise }}
+      </button>
+      }
+    </div>
+    <div class="">
+      <h3 class="text-[#ccd6f6]">{{ experiences[indexExp].job }}</h3>
+    </div>
+  </div>
+</div>
