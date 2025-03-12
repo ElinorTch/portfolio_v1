@@ -5,6 +5,10 @@
 @theme {
   --font-poppins: "Poppins", sans-serif;
 
+  --color-broken-white: #ccd6f6;
+  --color-shadow-white: #8892b0;
+  --color-green-fluo: #7fffd4;
+
   --animate-fade-in: fade-in 1s ease-in-out;
   @keyframes fade-in {
     0% {
