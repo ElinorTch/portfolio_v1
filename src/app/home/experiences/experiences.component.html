@@ -1,13 +1,13 @@
 <div
-  class="h-full md:h-screen w-full flex flex-col justify-center md:px-[50px] lg:px-[20%] flex flex-col gap-6 mb-5"
+  class="h-full md:h-screen w-full flex flex-col justify-center md:px-[50px] lg:px-[20%] flex flex-col gap-6"
 >
   <h1
-    class="flex items-center gap-2 text-[20px] md:text-[3vw] md:text-[2vw] font-semibold text-broken-white"
+    class="flex items-center gap-2 text-[19px] md:text-[3vw] font-semibold text-broken-white"
   >
     Expériences <span class="text-green-fluo">Professionnelles</span>
     <div class="hidden md:flex h-[0.5px] w-[250px] bg-[#8892b0]"></div>
   </h1>
-  <div class="flex flex-col sm:flex-row gap-10">
+  <div class="flex flex-col h-1/2 sm:flex-row gap-10">
     <div
       class="relative flex w-full sm:w-[130px] overflow-x-auto sm:overflow-visible sm:flex-col text-shadow-white"
     >
@@ -33,7 +33,7 @@
       </div>
       }
     </div>
-    <div class="flex w-full flex-col gap-2">
+    <div class="flex w-full h-full flex-col gap-2">
       <h2 class="text-broken-white text-[18px] md:text-[20px]">
         {{ experiences[indexExp].job }}
         <a class="text-green-fluo" [href]="experiences[indexExp].link"
