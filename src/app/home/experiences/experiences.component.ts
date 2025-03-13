@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { EXPERIENCES } from './experience';
 import { CommonModule } from '@angular/common';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-experiences',
@@ -15,9 +16,16 @@ export class ExperiencesComponent {
   indexExp = 0;
   isMobile!: Boolean;
 
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    this.isMobile = window.innerWidth < 700;
+  constructor(private breakpointObserver: BreakpointObserver) {
+    this.breakpointObserver
+      .observe(['(max-width: 699px)'])
+      .subscribe((result: BreakpointState) => {
+        if (result.matches) {
+          this.isMobile = true;
+        } else {
+          this.isMobile = false;
+        }
+      });
   }
 
   setActive(value: string, index: number): void {
