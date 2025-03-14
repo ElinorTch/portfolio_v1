@@ -34,9 +34,13 @@
       }
     </div>
     <div class="flex w-full h-full flex-col gap-2">
-      <h2 class="text-broken-white text-[18px] md:text-[20px]">
+      <h2 class="text-broken-white text-[16px] md:text-[20px]">
         {{ experiences[indexExp].job }}
-        <a class="text-green-fluo" [href]="experiences[indexExp].link"
+        <a
+          class="text-green-fluo"
+          target="_blank"
+          rel="noopener noreferrer"
+          [href]="experiences[indexExp].link"
           >&#64;{{ experiences[indexExp].enterprise }}</a
         >
       </h2>

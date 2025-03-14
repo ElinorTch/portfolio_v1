@@ -27,7 +27,7 @@ export const EXPERIENCES: Experience[] = [
       'Bitbucket pipeline',
       'Jira',
     ],
-    link: '',
+    link: 'https://mboadigital.tech/home',
   },
   {
     enterprise: 'Saint Jean',
@@ -49,7 +49,7 @@ export const EXPERIENCES: Experience[] = [
       'Docker',
       'Moodle',
     ],
-    link: '',
+    link: 'https://institutsaintjean.org/',
   },
   {
     enterprise: 'Fond Routier',
@@ -62,7 +62,7 @@ export const EXPERIENCES: Experience[] = [
       'Mise en place des cameras de surveillance',
     ],
     stack: [],
-    link: '',
+    link: 'https://fondsroutiercameroun.org/',
   },
   {
     enterprise: 'Fagiciel',
@@ -74,6 +74,6 @@ export const EXPERIENCES: Experience[] = [
       'Modelisation (UML - MERISE)',
     ],
     stack: ['PHP', 'HTML', 'PHPmyAdmin'],
-    link: '',
+    link: 'http://fagiciel.com/',
   },
 ];
