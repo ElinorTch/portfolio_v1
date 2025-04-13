@@ -9,6 +9,17 @@ export interface Experience {
 
 export const EXPERIENCES: Experience[] = [
   {
+    enterprise: 'Paratonnerres',
+    job: 'Développeur Full Stack',
+    date: 'Avril 2025 - septembre 2025',
+    description: [
+      "Participation au développement d'un logiciel desktop d'analyse de risque foudre",
+      "Développement d'une interface homme-machine pour un contrôleur de terre",
+    ],
+    stack: [],
+    link: 'https://france-paratonnerres.com/',
+  },
+  {
     enterprise: 'MBOA DIGITAL',
     job: 'Développeur Full Stack',
     date: 'Avril 2024 - Août 2024',
