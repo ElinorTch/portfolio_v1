@@ -18,7 +18,13 @@ export class NavbarComponent {
   show: boolean = false;
   dialog = inject(Dialog);
   showNavbar = true;
-  private lastScrollY = window.scrollY;
+  private lastScrollY!: any;
+
+  ngOnInit(): void {
+    if (typeof window !== 'undefined') {
+      this.lastScrollY = window.location.href;
+    }
+  }
 
   links: Link[] = [
     {
