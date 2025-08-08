@@ -32,7 +32,7 @@ export class NavbarComponent {
             target: '#header',
         },
         {
-            name: 'About-me',
+            name: 'About Me',
             target: '#me',
         },
         {

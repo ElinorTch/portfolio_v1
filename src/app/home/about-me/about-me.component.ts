@@ -9,5 +9,6 @@ import {EXPERIENCES} from "../experiences/experience";
     styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent {
-    protected technologies: string[] = ["Angular/React", "Java/JavaFX/Spring", "Javascript/typescript", "NestJS/Express/NodeJS"]
+    protected devTechnologies: string[] = ["NodeJS", "Angular", "NestJS/Express", "Java/JavaFX/Spring", "Javascript/typescript", ];
+    protected dataTechnologies: string[] = ["Python/PySpark", "Hadoop/Cassandra", "SSIS/NIFI/ElasticStack", "PowerBI/Tableau", "Kafka"];
 }
