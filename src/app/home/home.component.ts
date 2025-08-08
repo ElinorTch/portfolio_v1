@@ -3,16 +3,18 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { SocialComponent } from './social/social.component';
 import { ExperiencesComponent } from './experiences/experiences.component';
+import {AboutMeComponent} from "./about-me/about-me.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [
-    NavbarComponent,
-    HeaderComponent,
-    SocialComponent,
-    ExperiencesComponent,
-  ],
+    imports: [
+        NavbarComponent,
+        HeaderComponent,
+        SocialComponent,
+        ExperiencesComponent,
+        AboutMeComponent,
+    ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

@@ -1,57 +1,61 @@
-import { Component, HostListener, inject } from '@angular/core';
-import { Link } from './link';
-import { NgIcon, provideIcons } from '@ng-icons/core';
-import { hugeMenu01 } from '@ng-icons/huge-icons';
-import { CommonModule } from '@angular/common';
-import { Dialog, DIALOG_DATA, DialogModule } from '@angular/cdk/dialog';
-import { ResponsiveNavComponent } from './responsive-nav/responsive-nav.component';
+import {Component, HostListener, inject} from '@angular/core';
+import {Link} from './link';
+import {NgIcon, provideIcons} from '@ng-icons/core';
+import {hugeMenu01} from '@ng-icons/huge-icons';
+import {CommonModule} from '@angular/common';
+import {Dialog, DIALOG_DATA, DialogModule} from '@angular/cdk/dialog';
+import {ResponsiveNavComponent} from './responsive-nav/responsive-nav.component';
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [NgIcon, CommonModule, DialogModule],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss',
-  viewProviders: provideIcons({ hugeMenu01 }),
+    selector: 'app-navbar',
+    standalone: true,
+    imports: [NgIcon, CommonModule, DialogModule],
+    templateUrl: './navbar.component.html',
+    styleUrl: './navbar.component.scss',
+    viewProviders: provideIcons({hugeMenu01}),
 })
 export class NavbarComponent {
-  show: boolean = false;
-  dialog = inject(Dialog);
-  showNavbar = true;
-  private lastScrollY!: any;
+    show: boolean = false;
+    dialog = inject(Dialog);
+    showNavbar = true;
+    private lastScrollY!: any;
 
-  ngOnInit(): void {
-    if (typeof window !== 'undefined') {
-      this.lastScrollY = window.location.href;
+    ngOnInit(): void {
+        if (typeof window !== 'undefined') {
+            this.lastScrollY = window.location.href;
+        }
     }
-  }
 
-  links: Link[] = [
-    {
-      name: 'Accueil',
-      target: '#header',
-    },
-    {
-      name: 'Expériences',
-      target: '#experiences',
-    },
-  ];
+    links: Link[] = [
+        {
+            name: 'Accueil',
+            target: '#header',
+        },
+        {
+            name: 'About Me',
+            target: '#me',
+        },
+        {
+            name: 'Expériences',
+            target: '#experiences',
+        },
+    ];
 
-  openDialog() {
-    this.dialog.open(ResponsiveNavComponent, {
-      minWidth: '300px',
-      data: {
-        links: this.links,
-      },
-    });
-  }
+    openDialog() {
+        this.dialog.open(ResponsiveNavComponent, {
+            minWidth: '300px',
+            data: {
+                links: this.links,
+            },
+        });
+    }
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const currentScrollY = window.scrollY;
+    @HostListener('window:scroll', [])
+    onWindowScroll() {
+        const currentScrollY = window.scrollY;
 
-    this.showNavbar = currentScrollY < this.lastScrollY || currentScrollY < 10;
+        this.showNavbar = currentScrollY < this.lastScrollY || currentScrollY < 10;
 
-    this.lastScrollY = currentScrollY;
-  }
+        this.lastScrollY = currentScrollY;
+    }
 }

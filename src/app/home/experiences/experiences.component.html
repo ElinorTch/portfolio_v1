@@ -1,70 +1,75 @@
 <div
-  class="h-full w-full flex flex-col justify-center md:px-[50px] lg:px-[20%] flex flex-col gap-6"
+    class="h-full w-full flex flex-col justify-center md:px-[50px] lg:px-[20%] gap-6"
 >
-  <h1
-    class="flex items-center gap-2 text-[19px] md:text-[3vw] font-semibold text-broken-white"
-  >
-    Expériences <span class="text-green-fluo">Professionnelles</span>
-    <div class="hidden md:flex h-[0.5px] w-[250px] bg-[#8892b0]"></div>
-  </h1>
-  <div class="flex flex-col h-full sm:flex-row gap-10">
-    <div
-      class="relative flex h-12 w-full sm:w-[130px] overflow-x-auto sm:overflow-visible sm:flex-col text-shadow-white"
+    <h1
+        class="flex items-center gap-2 text-[19px] md:text-[3vw] font-semibold text-broken-white"
     >
-      @for (experience of experiences; track $index) { @if ($index == 0) {
-      <div
-        class="absolute bottom-0 sm:left-0 sm:top-0 h-1 w-[130px] sm:h-12 sm:w-[2px] bg-green-fluo rounded-[10px] transition-all duration-300"
-        [ngStyle]="{
-          transform: isMobile
-            ? 'translateX(' + indexExp * 100 + '%)'
-            : 'translateY(' + indexExp * 100 + '%)'
-        }"
-      ></div>
-      }
-      <div
-        class="py-2 px-4 h-full sm:min-h-12 min-w-[130px] justify-center sm:justify-start flex flex-start items-center text-[14px] cursor-pointer sm:border-l-[1px] sm:border-[#8892b0] transition-all duration-300 hover:text-[#7fffd4] hover:bg-[#112240]"
-        [ngClass]="{
+        Expériences <span class="text-green-fluo">Professionnelles</span>
+        <div class="hidden md:flex h-[0.5px] w-[250px] bg-[#8892b0]"></div>
+    </h1>
+    <div class="flex flex-col justify-center min-h-[500px] sm:flex-row gap-10">
+        <div
+            class="relative flex h-12 w-full sm:w-[130px] overflow-x-auto sm:overflow-visible sm:flex-col text-shadow-white"
+        >
+            @for (experience of experiences; track $index) {
+                @if ($index == 0) {
+                    <div
+                        class="absolute bottom-0 sm:left-0 sm:top-0 h-1 w-[130px] sm:h-12 sm:w-[2px] bg-green-fluo rounded-[10px] transition-all duration-300"
+                        [ngStyle]="{
+                            transform: isMobile
+                            ? 'translateX(' + indexExp * 100 + '%)'
+                            : 'translateY(' + indexExp * 100 + '%)'
+                        }"
+                    ></div>
+                }
+                <div
+                    class="py-2 px-4 h-full sm:min-h-12 min-w-[130px] justify-center sm:justify-start flex flex-start items-center text-[14px] cursor-pointer sm:border-l-[1px] sm:border-[#8892b0] transition-all duration-300 hover:text-[#7fffd4] hover:bg-[#112240]"
+                    [ngClass]="{
           'text-green-fluo bg-[#112240]': experience.enterprise == activeExp,
           'hover:border-[#8892b0]': experience.enterprise != activeExp
         }"
-        (click)="setActive(experience.enterprise, $index)"
-      >
-        {{ experience.enterprise }}
-      </div>
-      }
+                    (click)="setActive(experience.enterprise, $index)"
+                >
+                    {{ experience.enterprise }}
+                </div>
+            }
+        </div>
+        <div class="flex w-full h-full flex-col gap-2">
+            <h2 class="text-broken-white text-[16px] md:text-[20px]">
+                {{ experiences[indexExp].job }}
+                <a
+                    class="text-green-fluo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    [href]="experiences[indexExp].link"
+                >&#64;{{ experiences[indexExp].enterprise }}</a
+                >
+            </h2>
+            <h4 class="text-shadow-white text-[16px] md:text-[18px]">
+                {{ experiences[indexExp].date }}
+            </h4>
+            <div
+                class="mt-4 text-shadow-white flex flex-col gap-5 text-[16px] md:text-[18px]"
+            >
+                <ul class="list-['✔'] pl-5 flex flex-col gap-2">
+                    @for (item of experiences[indexExp].description; track $index) {
+                        <li class="pl-4 marker:text-green-fluo">
+                            {{ item }}
+                        </li>
+                    }
+                </ul>
+                @if (experiences[indexExp].stack.length != 0) {
+                    <p class="mt-2">
+                        <span class="text-green-fluo">Stack technique</span>: @for (item of
+                        experiences[indexExp].stack; track $index) {
+                        {{ item }} @if ($index !=
+                        experiences[indexExp].stack.length - 1) {
+                            -
+                        }
+                    }
+                    </p>
+                }
+            </div>
+        </div>
     </div>
-    <div class="flex w-full h-full flex-col gap-2">
-      <h2 class="text-broken-white text-[16px] md:text-[20px]">
-        {{ experiences[indexExp].job }}
-        <a
-          class="text-green-fluo"
-          target="_blank"
-          rel="noopener noreferrer"
-          [href]="experiences[indexExp].link"
-          >&#64;{{ experiences[indexExp].enterprise }}</a
-        >
-      </h2>
-      <h4 class="text-shadow-white text-[16px] md:text-[18px]">
-        {{ experiences[indexExp].date }}
-      </h4>
-      <div
-        class="mt-4 text-shadow-white flex flex-col gap-5 text-[16px] md:text-[18px]"
-      >
-        <ul class="list-['✔'] pl-5 flex flex-col gap-2">
-          @for (item of experiences[indexExp].description; track $index) {
-          <li class="pl-4 marker:text-green-fluo">
-            {{ item }}
-          </li>
-          }
-        </ul>
-        @if (experiences[indexExp].stack.length != 0) {
-        <p class="mt-2">
-          <span class="text-green-fluo">Stack technique</span>: @for (item of
-          experiences[indexExp].stack; track $index) { {{ item }} @if ($index !=
-          experiences[indexExp].stack.length - 1 ) {-}}
-        </p>
-        }
-      </div>
-    </div>
-  </div>
 </div>
